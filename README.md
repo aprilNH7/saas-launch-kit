@@ -15,7 +15,7 @@ A production-ready, full-stack SaaS starter kit built with **Next.js 15**, **Typ
 
 <br />
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-22c55e?style=for-the-badge&logo=googlechrome&logoColor=white)](https://saas-launch-kit.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-22c55e?style=for-the-badge&logo=googlechrome&logoColor=white)](https://aprilnh7.github.io/saas-launch-kit)
 
 [**Getting Started**](#-getting-started) &nbsp;&middot;&nbsp; [**Features**](#-features) &nbsp;&middot;&nbsp; [**Architecture**](#-architecture) &nbsp;&middot;&nbsp; [**Tech Stack**](#-tech-stack) &nbsp;&middot;&nbsp; [**Deployment**](#-deployment) &nbsp;&middot;&nbsp; [**Contributing**](CONTRIBUTING.md)
 
