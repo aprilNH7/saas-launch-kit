@@ -15,6 +15,8 @@ A production-ready, full-stack SaaS starter kit built with **Next.js 15**, **Typ
 
 <br />
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-22c55e?style=for-the-badge&logo=googlechrome&logoColor=white)](https://saas-launch-kit.vercel.app)
+
 [**Getting Started**](#-getting-started) &nbsp;&middot;&nbsp; [**Features**](#-features) &nbsp;&middot;&nbsp; [**Architecture**](#-architecture) &nbsp;&middot;&nbsp; [**Tech Stack**](#-tech-stack) &nbsp;&middot;&nbsp; [**Deployment**](#-deployment) &nbsp;&middot;&nbsp; [**Contributing**](CONTRIBUTING.md)
 
 <br />
@@ -313,14 +315,6 @@ npm run stripe:listen
 ---
 
 ## Deployment
-
-### Vercel (Recommended)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/aprilnh7/saas-launch-kit)
-
-1. Click the button above
-2. Add environment variables from `.env.example`
-3. Deploy
 
 ### Docker
 
