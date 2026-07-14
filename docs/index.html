@@ -23,6 +23,27 @@
       --amber: #f59e0b;
       --rose: #f43f5e;
       --purple: #a855f7;
+      --shadow: 0 1px 3px rgba(0,0,0,0.3);
+      --chart-grid: #27272a;
+      --chart-label: #71717a;
+      --hover-bg: rgba(255,255,255,0.02);
+      --banner-bg: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --card-hover: #f1f5f9;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --primary: #16a34a;
+      --primary-dim: rgba(22, 163, 74, 0.08);
+      --shadow: 0 1px 3px rgba(0,0,0,0.08);
+      --chart-grid: #e2e8f0;
+      --chart-label: #94a3b8;
+      --hover-bg: rgba(0,0,0,0.02);
+      --banner-bg: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
     }
 
     body {
@@ -66,6 +87,33 @@
     .sidebar-logo span {
       font-weight: 700;
       font-size: 16px;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card-hover);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .theme-toggle:hover { border-color: var(--primary); }
+    .theme-toggle svg { width: 18px; height: 18px; color: var(--text-muted); transition: color 0.2s; }
+    .theme-toggle:hover svg { color: var(--text); }
+
+    .theme-toggle .icon-sun { display: none; }
+    .theme-toggle .icon-moon { display: block; }
+    [data-theme="light"] .theme-toggle .icon-sun { display: block; }
+    [data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+    /* Transition for theme switch */
+    body, .sidebar, .stat-card, .card, .demo-banner, .time-filter, .time-btn,
+    .activity-icon, .stat-icon, .nav-item, .progress-track, .more-btn, .theme-toggle {
+      transition: background 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
     }
 
     .nav-section {
@@ -144,7 +192,7 @@
 
     .time-btn.active {
       background: var(--bg); color: var(--text);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      box-shadow: var(--shadow);
     }
 
     /* Stats Grid */
@@ -298,7 +346,7 @@
     }
 
     tbody tr { transition: background 0.1s; }
-    tbody tr:hover { background: rgba(255,255,255,0.02); }
+    tbody tr:hover { background: var(--hover-bg); }
 
     .project-name { font-weight: 600; }
 
@@ -348,7 +396,7 @@
       bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+      background: var(--banner-bg);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 14px 28px;
@@ -472,10 +520,16 @@
         <h1>Dashboard</h1>
         <p>Welcome back! Here's your overview.</p>
       </div>
-      <div class="time-filter">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>
+        </button>
+        <div class="time-filter">
         <button class="time-btn">7 Days</button>
         <button class="time-btn active">30 Days</button>
         <button class="time-btn">90 Days</button>
+      </div>
       </div>
     </div>
 
@@ -561,9 +615,9 @@
               </linearGradient>
             </defs>
             <!-- Grid lines -->
-            <line x1="0" y1="50" x2="600" y2="50" stroke="#27272a" stroke-width="0.5" stroke-dasharray="4"/>
-            <line x1="0" y1="100" x2="600" y2="100" stroke="#27272a" stroke-width="0.5" stroke-dasharray="4"/>
-            <line x1="0" y1="150" x2="600" y2="150" stroke="#27272a" stroke-width="0.5" stroke-dasharray="4"/>
+            <line x1="0" y1="50" x2="600" y2="50" stroke="var(--chart-grid)" stroke-width="0.5" stroke-dasharray="4"/>
+            <line x1="0" y1="100" x2="600" y2="100" stroke="var(--chart-grid)" stroke-width="0.5" stroke-dasharray="4"/>
+            <line x1="0" y1="150" x2="600" y2="150" stroke="var(--chart-grid)" stroke-width="0.5" stroke-dasharray="4"/>
             <!-- Area fill -->
             <path d="M0,160 L50,140 L100,148 L150,120 L200,125 L250,100 L300,95 L350,75 L400,80 L450,60 L500,52 L550,40 L600,30 L600,200 L0,200 Z" fill="url(#chartGrad)">
               <animate attributeName="d" dur="1.5s" fill="freeze"
@@ -587,12 +641,12 @@
               <circle cx="600" cy="30" r="4" fill="#22c55e" stroke="#09090b" stroke-width="2"/>
             </g>
             <!-- X Labels -->
-            <text x="0" y="195" fill="#71717a" font-size="10" font-family="Inter">Jan</text>
-            <text x="95" y="195" fill="#71717a" font-size="10" font-family="Inter">Mar</text>
-            <text x="195" y="195" fill="#71717a" font-size="10" font-family="Inter">May</text>
-            <text x="295" y="195" fill="#71717a" font-size="10" font-family="Inter">Jul</text>
-            <text x="395" y="195" fill="#71717a" font-size="10" font-family="Inter">Sep</text>
-            <text x="495" y="195" fill="#71717a" font-size="10" font-family="Inter">Nov</text>
+            <text x="0" y="195" fill="var(--chart-label)" font-size="10" font-family="Inter">Jan</text>
+            <text x="95" y="195" fill="var(--chart-label)" font-size="10" font-family="Inter">Mar</text>
+            <text x="195" y="195" fill="var(--chart-label)" font-size="10" font-family="Inter">May</text>
+            <text x="295" y="195" fill="var(--chart-label)" font-size="10" font-family="Inter">Jul</text>
+            <text x="395" y="195" fill="var(--chart-label)" font-size="10" font-family="Inter">Sep</text>
+            <text x="495" y="195" fill="var(--chart-label)" font-size="10" font-family="Inter">Nov</text>
           </svg>
         </div>
       </div>
@@ -781,6 +835,22 @@
         document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
       });
+    });
+
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('slk-theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+    toggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      if (next === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', next);
+      }
+      localStorage.setItem('slk-theme', next);
     });
   </script>
 </body>
