@@ -388,4 +388,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 If this helped you ship faster, consider giving it a star!
 
+[![Last Updated](https://img.shields.io/badge/last%20updated-July%202026-brightgreen)](https://github.com/aprilNH7/saas-launch-kit)
+
 </div>
