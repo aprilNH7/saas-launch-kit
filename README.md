@@ -17,7 +17,7 @@ A production-ready, full-stack SaaS starter kit built with **Next.js 15**, **Typ
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-22c55e?style=for-the-badge&logo=googlechrome&logoColor=white)](https://aprilnh7.github.io/saas-launch-kit)
 
-[**Getting Started**](#-getting-started) &nbsp;&middot;&nbsp; [**Features**](#-features) &nbsp;&middot;&nbsp; [**Architecture**](#-architecture) &nbsp;&middot;&nbsp; [**Tech Stack**](#-tech-stack) &nbsp;&middot;&nbsp; [**Deployment**](#-deployment) &nbsp;&middot;&nbsp; [**Contributing**](CONTRIBUTING.md)
+[**Getting Started**](#getting-started) &nbsp;&middot;&nbsp; [**Features**](#features) &nbsp;&middot;&nbsp; [**Architecture**](#architecture) &nbsp;&middot;&nbsp; [**Tech Stack**](#tech-stack) &nbsp;&middot;&nbsp; [**Deployment**](#deployment) &nbsp;&middot;&nbsp; [**Contributing**](CONTRIBUTING.md)
 
 <br />
 
@@ -388,6 +388,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 If this helped you ship faster, consider giving it a star!
 
-[![Last Updated](https://img.shields.io/badge/last%20updated-July%202026-brightgreen)](https://github.com/aprilNH7/saas-launch-kit)
+[![Last Updated](https://img.shields.io/badge/last%20updated-September%202025-brightgreen)](https://github.com/aprilNH7/saas-launch-kit)
 
 </div>
