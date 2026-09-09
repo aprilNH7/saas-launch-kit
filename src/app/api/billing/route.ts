@@ -7,7 +7,7 @@ import { createCheckoutSession, createCustomerPortal, PLANS } from "@/lib/stripe
 export async function POST(req: Request) {
   try {
     const session = await auth()
-    if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    if (!session?.user?.id) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
 
     const { teamId, plan, interval, action } = await req.json()
 

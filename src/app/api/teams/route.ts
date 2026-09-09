@@ -9,7 +9,7 @@ import { randomBytes } from "crypto"
 export async function GET(req: Request) {
   try {
     const session = await auth()
-    if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    if (!session?.user?.id) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
 
     const { searchParams } = new URL(req.url)
     const teamId = searchParams.get("teamId")
@@ -37,7 +37,7 @@ const inviteSchema = z.object({
 export async function POST(req: Request) {
   try {
     const session = await auth()
-    if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    if (!session?.user?.id) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
 
     const body = await req.json()
     const { teamId, email, role } = inviteSchema.parse(body)
