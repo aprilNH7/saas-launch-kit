@@ -62,7 +62,7 @@ export function ProjectsTable() {
                 </td>
                 <td className="px-6 py-4 text-sm text-muted-foreground">{project.updated}</td>
                 <td className="px-6 py-4">
-                  <button className="rounded-md p-1 hover:bg-muted">
+                  <button type="button" aria-label="Project actions" className="rounded-md p-1 hover:bg-muted">
                     <MoreHorizontal className="h-4 w-4 text-muted-foreground" />
                   </button>
                 </td>

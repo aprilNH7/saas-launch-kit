@@ -43,6 +43,7 @@ export default function OverviewPage() {
           {(["7d", "30d", "90d"] as const).map((range) => (
             <button
               key={range}
+              type="button"
               onClick={() => setTimeRange(range)}
               className={`px-3 py-1.5 text-sm rounded-md transition-colors ${
                 timeRange === range

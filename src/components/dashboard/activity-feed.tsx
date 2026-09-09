@@ -16,7 +16,7 @@ export function ActivityFeed() {
     <div className="rounded-xl border bg-card p-6 shadow-sm h-full">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold">Recent Activity</h3>
-        <button className="text-sm text-primary hover:underline">View all</button>
+        <button type="button" className="text-sm text-primary hover:underline">View all</button>
       </div>
       <div className="space-y-6">
         {activities.map((activity) => (
