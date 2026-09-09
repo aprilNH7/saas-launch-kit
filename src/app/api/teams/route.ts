@@ -4,6 +4,7 @@ import { db } from "@/lib/db"
 import { z } from "zod"
 import { sendTeamInviteEmail } from "@/lib/email"
 import { randomBytes } from "crypto"
+import { INVITE_EXPIRY_DAYS, INVITE_TOKEN_BYTES } from "@/config/invites"
 
 // GET — list team members
 export async function GET(req: Request) {
@@ -63,7 +64,7 @@ export async function POST(req: Request) {
     }
 
     // Create invite
-    const token = randomBytes(32).toString("hex")
+    const token = randomBytes(INVITE_TOKEN_BYTES).toString("hex")
     const invite = await db.invite.create({
       data: {
         email,
@@ -71,7 +72,7 @@ export async function POST(req: Request) {
         token,
         teamId,
         inviterId: session.user.id,
-        expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
+        expiresAt: new Date(Date.now() + INVITE_EXPIRY_DAYS * 24 * 60 * 60 * 1000),
       },
     })
 
