@@ -7,8 +7,9 @@ Thank you for your interest in contributing! This guide will help you get starte
 1. **Fork & clone** the repository
 2. **Install dependencies**: `npm install`
 3. **Set up environment**: Copy `.env.example` to `.env.local` and fill in values
-4. **Set up database**: `npx prisma db push && npm run db:seed`
-5. **Start dev server**: `npm run dev`
+4. **Generate Prisma client**: `npx prisma generate`
+5. **Set up database**: `npx prisma db push && npm run db:seed`
+6. **Start dev server**: `npm run dev`
 
 ## Project Structure
 
@@ -48,7 +49,7 @@ src/
 
 1. Create a feature branch: `git checkout -b feature/your-feature`
 2. Make your changes with clear commit messages
-3. Run `npm run lint && npm run type-check && npm test`
+3. Run `npm run lint && npm run type-check && npm test && npm run build`
 4. Push and open a PR against `main`
 5. Fill out the PR template with description and screenshots
 
