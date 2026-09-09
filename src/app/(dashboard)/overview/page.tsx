@@ -3,8 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import {
-  BarChart3, Users, FolderKanban, Activity, ArrowUpRight,
-  ArrowDownRight, TrendingUp, Clock, Zap
+  BarChart3, Users, FolderKanban, Activity, Clock
 } from "lucide-react"
 import { RevenueChart } from "@/components/charts/revenue-chart"
 import { ActivityFeed } from "@/components/dashboard/activity-feed"
