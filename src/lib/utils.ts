@@ -1,10 +1,17 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+/**
+ * Merge Tailwind CSS classes with `clsx` and resolve conflicts with `tailwind-merge`.
+ */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+/**
+ * Format a number as a currency string.
+ * Defaults to USD with no fractional digits.
+ */
 export function formatCurrency(amount: number, currency = "USD") {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -13,10 +20,16 @@ export function formatCurrency(amount: number, currency = "USD") {
   }).format(amount)
 }
 
+/**
+ * Format a large number using compact notation (e.g. 1.5K, 1M).
+ */
 export function formatNumber(num: number) {
   return new Intl.NumberFormat("en-US", { notation: "compact" }).format(num)
 }
 
+/**
+ * Format a date or date string as a human-readable string.
+ */
 export function formatDate(date: Date | string) {
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
@@ -25,6 +38,9 @@ export function formatDate(date: Date | string) {
   }).format(new Date(date))
 }
 
+/**
+ * Return a relative time string (e.g. "2h ago", "Just now").
+ */
 export function formatRelativeTime(date: Date | string) {
   const now = new Date()
   const then = new Date(date)
@@ -41,6 +57,9 @@ export function formatRelativeTime(date: Date | string) {
   return "Just now"
 }
 
+/**
+ * Convert a string into a URL-friendly slug.
+ */
 export function generateSlug(text: string) {
   return text
     .toLowerCase()
@@ -48,10 +67,16 @@ export function generateSlug(text: string) {
     .replace(/(^-|-$)/g, "")
 }
 
+/**
+ * Truncate a string to a maximum length, appending an ellipsis when truncated.
+ */
 export function truncate(str: string, length: number) {
   return str.length > length ? str.slice(0, length) + "..." : str
 }
 
+/**
+ * Generate a random API key with a `sk_live_` prefix.
+ */
 export function generateApiKey() {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
   const prefix = "sk_live_"
@@ -61,4 +86,5 @@ export function generateApiKey() {
   }
   return key
 }
-export const APP_VERSION = '2.0.1'
+
+export const APP_VERSION = "2.0.1"
